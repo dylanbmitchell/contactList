@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="center-align">Contacts</h1>
+        
+        <input type="text" id="filterInput" placeholder="Search">
+        
+        <ul id="list" class="listWithHeader">
+            <li class="Header"> 
+                <h5>A</h5>
+            </li>
+            <li class="name">
+                <a href="#">Alecks</a>
+            </li>
+            <li class="name">
+                <a href="#">Aliex</a>
+            </li>
+            <li class="name">
+                <a href="#">Alex</a>
+            </li>
+            <li class="name">
+                <a href="#">Adddam</a>
+            </li>
+            <li class="name">
+                <a href="#">Aleshturdam</a>
+            </li>
+            
+            <li class="Header"> 
+                <h5>B</h5>
+            </li>
+            <li class="name">
+                <a href="#">Blowho</a>
+            </li>
+            <li class="name">
+                <a href="#">Bleaks</a>
+            </li>
+            <li class="name">
+                <a href="#">Brown</a>
+            </li>
+            <li class="name">
+                <a href="#">Bro</a>
+            </li>
+            <li class="name">
+                <a href="#">Braa</a>
+            </li>
+            
+            <li class="Header">
+                <h5>...</h5>
+            </li>
+            
+            <li class="Header"> 
+                <h5>W</h5>
+            </li>
+            <li class="name">
+                <a href="#">Willian</a>
+            </li>
+            <li class="name">
+                <a href="#">Wiliam</a>
+            </li>
+            <li class="name">
+                <a href="#">Welks</a>
+            </li>
+            <li class="name">
+                <a href="#">W</a>
+            </li>
+            <li class="name">
+                <a href="#">Winey</a>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        
+        let filterInput = document.getElementById('filterInput');
+        
+        filterInput.addEventListener('keyup', filterNames);
+        
+        function filterNames(){
+          
+          let filterValue = document.getElementById('filterInput').value.toUpperCase();
+          
+          let ul = document.getElementById('list');
+          
+          let li = ul.querySelectorAll('li.name');
+          
+          for(let i = 0;i < li.length;i++){
+            let a = li[i].getElementsByTagName('a')[0];
+            
+            if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+              li[i].style.display = '';
+            } else {
+              li[i].style.display = 'none';
+            }
+          
+          
+          }
+        }
+        
+
+    
+    </script>
+</body>
+</html>
